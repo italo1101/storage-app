@@ -5,6 +5,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { SignupUserRequest } from 'src/app/models/interfaces/user/signupUserRequest';
 import { UserService } from 'src/app/services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +31,8 @@ export class HomeComponent {
       private formBuilder: FormBuilder,
       private userService: UserService,
       private cookieService: CookieService,
-      private MessageService: MessageService
+      private MessageService: MessageService,
+      private router: Router
   ){}
 
   onSubmitLoginForm(): void{
@@ -42,7 +44,7 @@ export class HomeComponent {
             this.cookieService.set('USER_INFO', response?.token);
             this.loginForm.reset();
             this.MessageService.add({
-              severity: 'sucess',
+              severity: 'success',
               summary: 'Sucesso',
               detail: `Bem vindo de volta ${response.name}!`,
               life: 2000
