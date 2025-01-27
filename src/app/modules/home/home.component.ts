@@ -43,6 +43,7 @@ export class HomeComponent {
           if(response){
             this.cookieService.set('USER_INFO', response?.token);
             this.loginForm.reset();
+            this.router.navigate(['/dashboard']);
             this.MessageService.add({
               severity: 'success',
               summary: 'Sucesso',
