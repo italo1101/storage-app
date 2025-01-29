@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar'
 import { ToastModule } from 'primeng/toast'
 import { ChartModule } from 'primeng/chart';
+import { CardModule } from 'primeng/card';
 
 import { MessageService } from 'primeng/api';
 import { CookieService } from 'ngx-cookie-service';
@@ -22,6 +23,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   ],
   imports: [
     CommonModule,
+    CardModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(DASHBOARD_ROUTES),
